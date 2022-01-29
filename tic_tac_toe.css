@@ -1,0 +1,79 @@
+.game-board div {
+  background: transparent;
+  border: 1px solid #999;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  height: 100%;
+  width: 100%;
+}
+
+#game-status {
+  text-align: center;
+  font-size: 3em;
+  font-family: "Gabriola";
+  color: #463e3e;
+  margin: 0;
+}
+
+.game-board {
+  display: grid;
+  width: 70vw;
+  height: 70vh;
+}
+
+.finish div {
+  cursor: auto;
+}
+
+.game-board .active {
+  background: rgba(0, 128, 0, 0.664);
+}
+
+.game-board div:hover {
+  background-color: #d3cec5;
+}
+
+.game-board .active:hover {
+  background: green;
+}
+
+.game-board .X,
+.game-board .O {
+  cursor: auto;
+}
+
+.game-board div::after {
+  content: "?";
+  font-size: 250%;
+  font-weight: bold;
+  font-family: "Ink Free";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.game-board .X::after {
+  content: "X";
+  animation: Anim .2s ease;
+  color: blue;
+}
+
+.game-board .O::after {
+  content: "O";
+  animation: Anim .2s ease;
+  color: red;
+}
+
+@keyframes Anim {
+  0% {
+    opacity: .2;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
